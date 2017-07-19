@@ -1,0 +1,98 @@
+
+<html xmlns:th="http://www.thymeleaf.org" style="height: 100%">
+<head >
+    <div th:include="fragment/head :: head"></div>
+</head>
+<body style="height: 100%">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header" th:include="fragment/top :: top"></div>
+
+    <div class="layui-side" th:include="fragment/left :: left"> </div>
+
+    <!--主体内容-->
+    <div class="layui-body">
+        <div style="margin:0;position:absolute;top:4px;bottom:0px;width:100%;" class="layui-tab layui-tab-brief" lay-filter="tab" lay-allowclose="true">
+            <ul class="layui-tab-title">
+                <li lay-id="0" class="layui-this">首页</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <p style="padding: 10px 15px; margin-bottom: 20px; margin-top: 10px; border:1px solid #ddd;display:inline-block;">
+                        上次登陆
+                        <span style="padding-left:1em;" th:text="${#httpServletRequest.getRequestURI()}">IP：192.168.1.101</span>
+                        <span style="padding-left:1em;">地点：四川成都</span>
+                        <span style="padding-left:1em;">时间：2017-3-26 14：12</span>
+                    </p>
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>统计信息</legend>
+                        <div class="layui-field-box">
+                            <div style="display: inline-block; width: 100%;">
+                                <div class="ht-box layui-bg-blue">
+                                    <p>123</p>
+                                    <p>用户总数</p>
+                                </div>
+                                <div class="ht-box layui-bg-red">
+                                    <p>32</p>
+                                    <p>今日注册</p>
+                                </div>
+                                <div class="ht-box layui-bg-green">
+                                    <p>55</p>
+                                    <p>今日登陆</p>
+                                </div>
+                                <div class="ht-box layui-bg-orange">
+                                    <p>123</p>
+                                    <p>文章总数</p>
+                                </div>
+                                <div class="ht-box layui-bg-cyan">
+                                    <p>321</p>
+                                    <p>资源总数</p>
+                                </div>
+                                <div class="ht-box layui-bg-black">
+                                    <p>231</p>
+                                    <p>笔记总数</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-field-box" id="main" style="width: 600px;height:200px;">
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div  class="layui-footer" th:include="fragment/bottom :: bottom"> </div>
+
+    <div class="individuation animated flipOutY layui-hide" th:include="fragment/setting"></div>
+</div>
+<!-- layui规范化用法 -->
+<script type="text/javascript">
+    layui.config({
+        base: '/js/'
+    }).use('main');
+
+    var myChart = echarts.init(document.getElementById('main'));
+    var option = {
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'line',
+            data: [5, 20, 36, 10, 10, 20]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!--顶部-->
+<div class="layui-header" xmlns:th="http://www.thymeleaf.org" th:fragment="top">
+    <div class="ht-console">
+        <div class="ht-user">
+            <img th:src="@{/plugin/img/Logo_40.png}" />
+            <!--<a class="ht-user-name" th:text="${session.user.userName}"></a>-->
+        </div>
+    </div>
+    <span class="sys-title">舆情</span>
+    <ul class="ht-nav">
+        <li class="ht-nav-item">
+            <a href="javascript:;" id="individuation"><i class="fa fa-tasks fa-fw" style="padding-right:5px;"></i>个性化</a>
+        </li>
+        <li class="ht-nav-item">
+            <a href="/loginOut"><i class="fa fa-power-off fa-fw"></i>注销</a>
+        </li>
+    </ul>
+</div>

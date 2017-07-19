@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>登录</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <link th:href="@{/css/page.css}" rel="stylesheet"/>
+    <link th:href="@{/css/new-loginV2.css}" rel="stylesheet"/>
+    <script type="text/javascript" th:src="@{/plugin/jquery/jquery-3.1.1.min.js}"></script>
+    <!--<script type="text/javascript" th:src="@{/style/bootstart/js/bootstrap.min.js}"></script>-->
+    <script type="text/javascript" th:src="@{/js/login.js}"></script>
+</head>
+<body>
+<div id="page">
+    <div id="header" class="clearfix" data-spm="1000340">
+        <div class="logo">
+            <h1>登录</h1>
+        </div>
+    </div>
+    <div id="content">
+        <div class="login-newbg"
+             style="background-color: #393D49; height: 600px;">
+        </div>
+        <div class="content-layout">
+            <div class="box-login login-box-warp">
+                <div class="login-box module-static">
+                    <div class="static-form ">
+                        <div class="login-title">用户登录</div>
+                        <form action="/login" class="form-login" method="post"
+                              autocomplete="off" th:object="${user}">
+                            <div id="login_Message"
+                                 th:unless="${#strings.isEmpty(#strings.toString(errmsg))}"
+                                 class="login-msg error" th:text="${#strings.toString(errmsg)}">
+                            </div>
+                            <div class="field username-field">
+
+                                <label for="login_username"> <i
+                                        class="fa fa-user fa-lg"></i>
+                                </label>
+                                <input type="text" name="log_username" id="login_username"
+                                       class="login-text" placeholder="用户名" th:field="*{userName}"/>
+                            </div>
+                            <div class="field pwd-field">
+
+                                <label for="log_pwd"> <i
+                                        class="fa fa-lock fa-lg"></i>
+                                </label> <input type="password" name="log_password" id="log_pwd"
+                                                class="login-text" autocomplete="off" placeholder="密码"
+                                                th:field="*{passWord}"/>
+                            </div>
+
+                            <div class="login-links">
+                                <a href="#" class="forgot forget-pwd">忘记登录密码</a>
+                                <a href="#" class="register">免费注册</a>
+                            </div>
+                            <div class="submit">
+                                <button type="submit" id="login_submit">登录</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="box-forgot forgot-box-warp">
+                <div class="forgot-box module-static">
+                    <div class="static-form">
+                        <div class="forgot-title">忘记密码</div>
+
+                        <form action="/upPwd" class="form-forgot" method="post" autocomplete="off">
+                            <div id="forgot_Message" th:unless="${#strings.isEmpty(#strings.toString(forgot_Message))}"
+                                 class="login-msg error" th:text="${#strings.toString(forgot_Message)}"></div>
+                            <div class="field">
+                                <label for="forgot_pwd"> <i
+                                        class="fa fa-lock fa-lg"></i>
+                                </label> <input type="password" name="password" id="forgot_pwd"
+                                                class="register-text" placeholder="请设置密码"/>
+                            </div>
+
+                            <div class="field">
+                                <label for="v_forgot_pwd"> <i
+                                        class="fa fa-lock fa-lg"></i>
+                                </label> <input type="password" name="verify_password"
+                                                id="v_forgot_pwd" class="register-text"
+                                                placeholder="请确认密码"/>
+                            </div>
+
+                            <div class="field">
+                                <label for="for_email"> <i
+                                        class="fa fa-mobile fa-2x"></i>
+                                </label> <input type="text" name="eMail"
+                                                id="for_email" class="register-text" placeholder="注册邮箱"/>
+                            </div>
+
+                            <div class="field">
+                                <label for="forgot_user_phone_code"> <i
+                                        class="fa fa-check-square-o fa-lg"></i>
+                                </label> <input type="text" name="code"
+                                                id="forgot_user_phone_code" class="register-text"
+                                                style="width: 130px;" placeholder="短息验证码"/>
+                                <input type="button" value="免费获取验证码" class="smsBtn" onclick="passwdSendEmail(this)"/>
+                            </div>
+
+                            <div class="field">
+                                <a class="go-back"><i class="fa fa-chevron-circle-left"></i>
+                                    返回登陆</a>
+                                <button type="submit" class="btn btn-green pull-right">
+                                    提交 <i class="fa fa-arrow-circle-right" style="color: #fff;"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="box-register register-box-warp">
+                <div class="register-box module-static">
+                    <div class="static-form">
+                        <div class="register-title">免费注册</div>
+                        <form action="/register" class="form-register" method="post" autocomplete="off"
+                              th:object="${user}" id="register">
+                            <div id="register_Message"
+                                 th:unless="${#strings.isEmpty(#strings.toString(message))}"
+                                 class="login-msg error" th:text="${#strings.toString(message)}">
+                            </div>
+                            <div id="reg_Msg_success" style="display: none;"
+                                 class="msg success"></div>
+                            <div class="field">
+                                <label for="register_username"> <i
+                                        class="fa fa-user fa-lg"></i>
+                                </label>
+                                <input type="text" th:field="*{userName}" id="register_username"
+                                                class="register-text" placeholder="手机号/会员名/邮箱"
+                                       onchange="ajaxuser(this)"/>
+                                <div class="login-msg error"
+                                     th:if="${#fields.hasErrors('userName')}"
+                                     th:errors="*{userName}">>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="reg_pwd"> <i
+                                        class="fa fa-lock fa-lg"></i>
+                                </label>
+                                <input type="password" th:field="*{passWord}" id="reg_pwd"
+                                                class="register-text" placeholder="请设置密码"/>
+                                <div class="login-msg error"
+                                     th:if="${#fields.hasErrors('passWord')}"
+                                     th:errors="*{passWord}">>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="v_reg_pwd">
+                                    <i class="fa fa-lock fa-lg"></i>
+                                </label>
+                                <input type="password" id="v_reg_pwd" class="register-text"
+                                                placeholder="请确认密码"/>
+
+                            </div>
+
+                            <div class="field">
+                                <label for="reg_phone"> <i class="fa fa-mobile fa-2x"></i>
+                                </label>
+                                <input type="text"  th:field="*{phone}" id="reg_phone"
+                                       class="register-text" placeholder="手机号"/>
+                                <div class="login-msg error"
+                                     th:if="${#fields.hasErrors('phone')}"
+                                     th:errors="*{phone}">>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="reg_phone"> <i class="fa fa-mobile fa-2x"></i>
+                                </label>
+                                <input type="email"  th:field="*{eMail}" id="reg_eMail"
+                                       class="register-text" placeholder="邮箱"/>
+                                <div class="login-msg error"
+                                     th:if="${#fields.hasErrors('eMail')}"
+                                     th:errors="*{eMail}">>
+                                </div>
+                            </div>
+                            <!--<div class="field">-->
+                                <!--<label for="user_phone_code"> <i-->
+                                        <!--class="fa fa-check-square-o fa-lg"></i>-->
+                                <!--</label>-->
+                                <!--<input type="text" name="code" id="user_phone_code"-->
+                                       <!--class="register-text" style="width: 130px;"-->
+                                       <!--placeholder="邮箱验证码"/>-->
+                                <!--<input type="button" value="发送验证码" class="smsBtn"-->
+                                       <!--onclick="sendSimpleEmail(this)"/>-->
+                            <!--</div>-->
+                            <!--<div id="code_message"-->
+                                 <!--th:unless="${#strings.isEmpty(#strings.toString(code))}"-->
+                                 <!--class="login-msg error" th:text="${#strings.toString(code)}">-->
+                            <!--</div>-->
+                            <div class="field"></div>
+
+                            <div class="form-actions">
+                                已拥有一个账户？ <a href="#" class="go-back">返回登陆</a>
+                                <button type="submit" class="btn btn-green pull-right">
+                                    提交 <i class="fa fa-arrow-circle-right" style="color: #fff;"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="agreement-layout"></div>
+        <input type="hidden" th:value="${loginModel}" id="loginModel"/>
+    </div>
+    <div id="foot">
+        <div class="patent">
+            <p>大神科技</p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        init();
+        if($("#loginModel").val()=='register'){$('.register').click()};
+        if($("#loginModel").val()=='forgetPassword'){$('.forgot').click()};
+    });
+</script>
+</body>
+</html>

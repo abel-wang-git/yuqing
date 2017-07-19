@@ -1,0 +1,22 @@
+<div  xmlns:th="http://www.thymeleaf.org" th:fragment="ud">
+    <td>
+        <button class="layui-btn layui-btn-small layui-btn-normal"
+                th:abbr="${baseurl}" th:value="${page.id}" onclick="updateObj(this);">
+            <i class="layui-icon">&#xe642;</i>
+        </button>
+        <button class="layui-btn layui-btn-small layui-btn-danger"
+                th:abbr="${baseurl}" th:value="${page.id}" onclick="removeobj(this);">
+            <i class="layui-icon">&#xe640;</i>
+        </button>
+    </td>
+
+</div>
+
+<div xmlns:th="http://www.thymeleaf.org" style="display: none" th:fragment="hidden">
+    <div style="display: none;">
+    <input type="hidden" th:value="${#httpServletRequest.getRequestURI()}" id="listUrl"/>
+    <input type="text" th:value="${pageImpl.totalPages}" id="pageTotale"/>
+    <input type="text" th:value="${pageImpl.size}" id="pageSize"/>
+    <input type="text" th:value="${pageImpl.number+1}" id="pageNumber"/>
+    </div>
+</div>

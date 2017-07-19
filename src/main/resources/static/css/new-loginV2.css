@@ -1,0 +1,857 @@
+@CHARSET "UTF-8";
+
+body {
+	font: 12px/1.5 "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB',
+		'\5b8b\4f53', sans-serif
+}
+
+html, legend {
+	color: #404040;
+	background: #fff
+}
+
+blockquote, body, button, code, dd, div, dl, dt, fieldset, form, h1, h2,
+	h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+	margin: 0;
+	padding: 0
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+fieldset, img {
+	border: none
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style: normal;
+	font-weight: 400
+}
+
+li {
+	list-style: none
+}
+
+caption, th {
+	text-align: left
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%
+}
+
+h1 {
+	font-size: 18px
+}
+
+h2 {
+	font-size: 16px
+}
+
+h3 {
+	font-size: 14px
+}
+
+q:after, q:before {
+	content: ''
+}
+
+abbr, acronym {
+	border: none;
+	font-variant: normal
+}
+
+sup {
+	vertical-align: text-top
+}
+
+sub {
+	vertical-align: text-bottom
+}
+
+button, input, select, textarea {
+	*font-size: 100%;
+	font: 100% "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB',
+		'\5b8b\4f53', sans-serif
+}
+
+a {
+	color: #6c6c6c;
+	text-decoration: none
+}
+
+a:hover {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.clearfix:after {
+	content: '\0020';
+	display: block;
+	height: 0;
+	clear: both
+}
+
+.clearfix {
+	zoom: 1
+}
+
+.hidden {
+	display: none
+}
+
+input::-ms-clear {
+	display: none
+}
+
+input::-ms-reveal {
+	display: none
+}
+
+.login-box, .forgot-box, .register-box {
+	width: 300px;
+	padding: 25px 25px 40px;
+	color: #6c6c6c;
+	/**background: #fff;**/
+	position: relative;
+	margin: 0 auto
+}
+
+.login-box a.light-link {
+	color: #fff
+}
+
+.login-box a:hover {
+	color: #000;
+	text-decoration: none
+}
+
+.login-box.loading {
+	height: 295px;
+	background: #fff
+		url(https://img.alicdn.com/tps/TB1R5zYKVXXXXb7XVXXXXXXXXXX-32-32.gif)
+		no-repeat 50% 50%
+}
+
+.login-box.loading .bd, .login-box.loading .hd {
+	display: none
+}
+
+.module-quick .static-form, .module-quick .ww-login, .module-static .quick-form
+	{
+	display: none !important
+}
+
+.module-quick .quick-form, .module-static .static-form {
+	display: block
+}
+
+.module-quick .login-tip {
+	display: none
+}
+
+.login-title, .forgot-title, .register-title {
+	height: 18px;
+	line-height: 18px;
+	font-size: 20px;
+	color: #3c3c3c;
+	margin-top: 9px;
+	padding-bottom: 8px;
+	font-weight: 700
+}
+
+.nickx {
+	display: none;
+	font-size: 16px;
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	z-index: 1000;
+	cursor: pointer
+}
+
+.static-form {
+	position: relative
+}
+
+.static-form .field {
+	margin-top: 20px;
+	position: relative
+}
+
+.static-form .field label {
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	background: #ddd;
+	text-align: center;
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	outline: 0
+}
+
+.static-form .field label .iconfont {
+	font-size: 22px
+}
+
+.static-form .field .ph-label {
+	position: absolute;
+	line-height: 42px;
+	height: 42px;
+	color: #999;
+	opacity: 1;
+	transition: all .2s ease-out;
+	-webkit-transition: all .2s ease-in;
+	-moz-transition: all .2s ease-out;
+	left: 50px;
+	top: 0;
+	font-size: 14px
+}
+
+.ph-hide .ph-label {
+	display: none
+}
+
+.static-form .pwd-field label {
+	background-position: 50% -30px
+}
+
+.static-form .login-text, .static-form .register-text {
+	width: 240px;
+	font-size: 14px;
+	line-height: 18px;
+	height: 18px;
+	padding: 11px 8px 11px 50px;
+	border: 1px solid #ddd
+}
+
+.static-form .field-checkcode .login-text {
+	width: 70px;
+	padding-left: 10px
+}
+
+.static-form .field-checkcode .ph-label {
+	left: 10px;
+	top: 0
+}
+
+.static-form .check-code-img {
+	border: none;
+	height: 40px;
+	vertical-align: middle;
+	width: 150px;
+	margin-right: 1px
+}
+
+.static-form .change-code {
+	display: inline-block;
+	line-height: 14px;
+	margin: 0;
+	vertical-align: middle
+}
+
+.static-form .login-links {
+	margin-top: 29px;
+	overflow: hidden;
+	line-height: 14px
+}
+
+.static-form .login-links .forget-pwd {
+	float: left
+}
+
+.static-form .login-links .register {
+	float: right
+}
+
+.static-form .submit {
+	margin-top: 13px
+}
+
+.login-box .submit button {
+	width: 300px;
+	height: 42px;
+	border: 0;
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+	line-height: 42px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #fff;
+	background: #2D799E;
+	border-radius: 3px;
+	cursor: pointer;
+	zoom: 1
+}
+
+.login-box .submit button:hover, .btn-green:hover{
+	background-color: #c0c0c0;
+	border-color: #c0c0c0;
+}
+
+.static-form .other-login {
+	margin-top: 24px;
+	line-height: 14px
+}
+
+.static-form .other-login a {
+	display: inline-block;
+	margin-right: 20px
+}
+
+.static-form .other-login .iconfont {
+	font-size: 16px;
+	margin-right: 3px
+}
+
+.static-form .other-login .alipay-login .iconfont {
+	color: #1ba9ee
+}
+
+.static-form .other-login .weibo-login .iconfont {
+	color: #e52425
+}
+
+.static-form .login-msg {
+	line-height: 16px;
+	padding: 6px 10px;
+	overflow: hidden;
+	width: 278px;
+	/**position: absolute;**/
+	top: 0;
+	left: 0
+}
+
+.static-form .login-msg.error {
+	background: #fef2f2;
+	border: 1px solid #ffb4a8
+}
+.static-form .msg.success {
+	background: #b7fdc5;
+	border: 1px solid #39e865
+}
+
+.static-form .login-msg a {
+	color: #fff;
+}
+
+.static-form .login-msg.error .iconfont {
+	color: #000;
+	padding-right: 10px;
+	float: left;
+	font-size: 16px
+}
+
+.static-form .login-msg p {
+	float: left;
+	white-space: normal;
+	word-wrap: break-word;
+	width: 240px
+}
+
+.ww-login .submit {
+	margin-top: 40px
+}
+
+.ww-login .other-login {
+	margin-top: 23px
+}
+
+.ww-login .userlists {
+	overflow: hidden;
+	width: 270px;
+	margin: 0 auto;
+	position: relative
+}
+
+.ww-login .userlists-2 {
+	padding-bottom: 20px
+}
+
+.ww-login .ww-userlist .item-sso-user {
+	width: 90px;
+	margin: 0 auto;
+	position: relative;
+	cursor: pointer
+}
+
+.ww-login .userlists .item-sso-user {
+	width: 90px;
+	float: left;
+	position: relative;
+	cursor: pointer
+}
+
+.ww-login .ww-userlist .item-sso-user.current .icon-ok {
+	right: 0;
+	top: 0
+}
+
+.ww-login .userlists .item-sso-user .user-pic {
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	margin: 34px auto 0;
+	text-align: center;
+	border-radius: 50%
+}
+
+.ww-login .item-sso-user .iconfont, .ww-login .item-sso-user input {
+	display: none
+}
+
+.ww-login .item-sso-user.current .icon-ok {
+	color: #78c430;
+	display: block;
+	width: 24px;
+	height: 24px;
+	font-size: 24px;
+	line-height: 24px;
+	position: absolute
+}
+
+.ww-login .userlists .item-sso-user.current .icon-ok {
+	right: 5px;
+	top: 26px
+}
+
+.ww-login .ww-trigger {
+	text-align: center;
+	margin-top: 18px
+}
+
+.ww-login .ww-trigger li {
+	display: inline-block;
+	*diplay: inline;
+	width: 12px;
+	height: 12px;
+	line-height: 12px;
+	margin-right: 5px;
+	border-radius: 50%;
+	background: #ddd;
+	text-indent: -9999px;
+	cursor: pointer
+}
+
+.ww-login .ww-trigger li.current {
+	background: #000
+}
+
+.ww-login .trigger-bar {
+	position: relative
+}
+
+.ww-login .trigger-bar a {
+	color: #ddd;
+	position: absolute;
+	top: -100px
+}
+
+.ww-login .trigger-bar a:hover {
+	color: #fff
+}
+
+.ww-login .trigger-bar a.prev {
+	left: 0
+}
+
+.ww-login .trigger-bar a.next {
+	right: 0
+}
+
+.ww-login.ww-slide .submit {
+	margin-top: 24px
+}
+
+.akey-login .akey-desc {
+	text-align: center;
+	margin: 18px 0 10px
+}
+
+.login-box .user-pic {
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	margin: 34px auto 0;
+	text-align: center;
+	border-radius: 50%
+}
+
+.login-box .user-name {
+	margin-top: 7px;
+	line-height: 16px;
+	text-align: center;
+	color: #3c3c3c;
+	height: 16px;
+	overflow: hidden
+}
+
+.akey-login .submit {
+	margin-top: 40px
+}
+
+.akey-login .akey-help {
+	text-align: right;
+	margin-top: 23px
+}
+
+.akey-login .akey-msg, .akey-login-error .akey-msg .msg-err,
+	.akey-login-error .akey-msg .msg-ok {
+	display: none
+}
+
+.akey-login-error .akey-msg, .akey-login-error .akey-msg .msg-err,
+	.akey-login-ok .akey-msg, .akey-login-ok .akey-msg .msg-ok {
+	display: block
+}
+
+.akey-login-error .akey-mod, .akey-login-ok .akey-mod, .akey-login-ok .akey-msg .msg-err
+	{
+	display: none
+}
+
+.akey-msg {
+	margin-top: 20px;
+	position: relative
+}
+
+.akey-msg h6 {
+	margin-top: 22px;
+	margin-bottom: 15px;
+	font-size: 12px;
+	line-height: 12px;
+	text-align: center;
+	color: #6c6c6c
+}
+
+.akey-msg p {
+	text-align: center;
+	font-size: 16px;
+	line-height: 16px;
+	color: #3c3c3c
+}
+
+.akey-msg .msg-icon {
+	position: relative;
+	text-align: center
+}
+
+.akey-msg .link {
+	margin-top: 41px;
+	text-align: center
+}
+
+.login-box .nc-container.tb-login .nc_scale {
+	border: 1px solid #ddd;
+	height: 40px;
+	width: 298px
+}
+
+.login-box .nc_scale .scale_text {
+	line-height: 40px
+}
+
+.login-box .nc_scale span {
+	height: 38px
+}
+
+.login-box .nc-container #clickCaptcha, .login-box .nc-container #imgCaptcha,
+	.login-box .nc-container.tb-login #clickCaptcha, .login-box .nc-container.tb-login #imgCaptcha
+	{
+	width: 310px;
+	padding-left: 20px;
+	padding-right: 20px;
+	left: -25px
+}
+
+#imgCaptcha .imgCaptcha_text input {
+	border: 1px solid #ddd
+}
+
+body #content .login-box .bd .nc-container.tb-login .login-msg {
+	margin-left: 20px
+}
+
+.login-box #_btn_1, .login-box #_btn_2 {
+	right: 20px
+}
+
+.login-box .nc-container.tb-login #clickCaptcha, .login-box .nc-container.tb-login #imgCaptcha
+	{
+	max-height: inherit !important;
+	left: -26px !important;
+	top: -204px !important
+}
+
+.login-box .nc-container.tb-login #clickCaptcha .clickCaptcha_img img {
+	margin-left: 30px
+}
+
+.login-switch {
+	width: 52px;
+	height: 52px;
+	line-height: 52px;
+	position: absolute;
+	right: 5px;
+	top: 8px;
+	-moz-user-select: none
+}
+
+.login-switch .iconfont {
+	font-size: 52px;
+	cursor: pointer;
+	display: none;
+	color: #000
+}
+
+.login-switch .iconfont:hover {
+	color: #f52b00
+}
+
+.module-quick .login-switch .static, .module-static .login-switch .quick
+	{
+	display: block
+}
+
+.login-tip {
+	position: absolute;
+	top: 5px;
+	right: 58px
+}
+
+.ft-gray {
+	color: #9c9c9c
+}
+
+.poptip {
+	border: 1px solid #f3d995;
+	height: 16px;
+	line-height: 16px;
+	padding: 5px 20px 5px 15px;
+	background: #fefcee;
+	position: relative
+}
+
+.poptip .poptip-content {
+	color: #df9c1f;
+	font-size: 12px;
+	font-weight: 400
+}
+
+.poptip .poptip-content .iconfont {
+	color: #df9c1f;
+	font-size: 14px;
+	margin-right: 8px
+}
+
+.poptip-arrow {
+	position: absolute;
+	z-index: 10;
+	*zoom: 1
+}
+
+.poptip-arrow em, .poptip-arrow span {
+	position: absolute;
+	*zoom: 1;
+	width: 0;
+	height: 0;
+	border-color: rgba(255, 255, 255, 0);
+	border-color: transparent \0;
+	*border-color: transparent;
+	_border-color: tomato;
+	_filter: chroma(color = tomato);
+	border-style: solid;
+	overflow: hidden;
+	top: 0;
+	left: 0
+}
+
+.poptip-arrow {
+	top: 8px;
+	right: 0
+}
+
+.poptip-arrow em {
+	top: 0;
+	left: 1px;
+	border-left-color: #f3d995;
+	border-width: 6px 0 6px 6px
+}
+
+.poptip-arrow span {
+	border-left-color: #fefcee;
+	border-width: 6px 0 6px 6px
+}
+
+.qrcode-desc {
+	overflow: hidden;
+	width: 188px;
+	margin: 50px auto 0
+}
+
+.qrcode-desc .iconfont {
+	float: left;
+	color: #000;
+	font-size: 34px;
+	line-height: 36px;
+	margin-right: 10px
+}
+
+.qrcode-desc p {
+	width: 144px;
+	line-height: 18px;
+	color: #6c6c6c;
+	font-size: 12px;
+	float: left
+}
+
+.qrcode-main {
+	position: relative;
+	margin-top: 34px;
+	height: 140px
+}
+
+.qrcode-img {
+	position: absolute;
+	left: 80px;
+	top: 0
+}
+
+.qrcode-img img {
+	vertical-align: top
+}
+
+.qrcode-help {
+	position: absolute;
+	right: 12px;
+	top: -15px;
+	width: 120px;
+	height: 180px;
+	background:
+		url(//gtms02.alicdn.com/tps/i2/TB16efXKVXXXXbOXXXX.C3E4VXX-120-182.png)
+		no-repeat;
+	display: none;
+	opacity: 0
+}
+
+.qrcode-help-showed {
+	width: 300px;
+	margin: 0 auto
+}
+
+.qrcode-help-showed .qrcode-help {
+	display: block;
+	opacity: 1
+}
+
+.qrcode-help-showed .qrcode-img, .qrcode-login .qrcode-help-showed .msg-err
+	{
+	left: 13px
+}
+
+.qrcode-login .msg-err, .qrcode-login .qrcode-msg, .qrcode-login-error .qrcode-msg .msg-ok
+	{
+	display: none
+}
+
+.qrcode-login-error .msg-err, .qrcode-login-ok .qrcode-msg,
+	.qrcode-login-ok .qrcode-msg .msg-ok {
+	display: block
+}
+
+.qrcode-login-ok .msg-err, .qrcode-login-ok .qrcode-mod {
+	display: none
+}
+
+.qrcode-msg {
+	margin-top: 20px;
+	position: relative
+}
+
+.qrcode-msg h6 {
+	margin-top: 22px;
+	margin-bottom: 15px;
+	font-size: 12px;
+	line-height: 12px;
+	color: #6c6c6c;
+	text-align: center
+}
+
+.qrcode-msg p {
+	text-align: center;
+	font-size: 16px;
+	line-height: 16px;
+	color: #3c3c3c
+}
+
+.qrcode-msg .msg-icon {
+	position: relative;
+	text-align: center
+}
+
+.qrcode-msg .link {
+	margin-top: 41px;
+	text-align: center
+}
+
+.msg-icon .icon-ok {
+	color: #78c430
+}
+
+.msg-icon .icon-error, .msg-icon .icon-ok {
+	font-size: 32px;
+	line-height: 32px;
+	position: absolute;
+	top: 42px;
+	left: 137px
+}
+
+.msg-icon .icon-error {
+	color: #000
+}
+
+.msg-icon .icon-phone {
+	font-size: 116px;
+	line-height: 116px;
+	color: #ddd
+}
+
+.qrcode-login .msg-err {
+	width: 140px;
+	height: 140px;
+	background: rgba(255, 255, 255, .95);
+	position: absolute;
+	left: 80px;
+	top: 0;
+	z-index: 9999
+}
+
+.qrcode-login .msg-err h6 {
+	color: #3c3c3c;
+	margin-top: 38px;
+	margin-bottom: 8px;
+	text-align: center
+}
+
+.qrcode-login .msg-err .refresh {
+	width: 100px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	margin: 0 auto;
+	background: #fff;
+	display: block;
+	color: #fff;
+	border-radius: 3px
+}
+
+.qrcode-login .msg-err .refresh:hover {
+	background: #f52b00
+}

@@ -1,0 +1,31 @@
+<!--个性化设置-->
+<div class="individuation animated flipOutY layui-hide" xmlns:th="http://www.thymeleaf.org" th:fragment="setting">
+    <ul>
+        <li><i class="fa fa-cog" style="padding-right:5px"></i>个性化</li>
+    </ul>
+    <div class="explain">
+        <small>从这里进行系统设置和主题预览</small>
+    </div>
+    <div class="setting-title">设置</div>
+    <div class="setting-item layui-form">
+        <span>侧边导航</span>
+        <input type="checkbox" lay-skin="switch" lay-filter="sidenav" lay-text="ON|OFF" />
+    </div>
+    <div class="setting-item layui-form">
+        <span>管家提醒</span>
+        <input type="checkbox" lay-skin="switch" lay-filter="steward" lay-text="ON|OFF" />
+    </div>
+    <div class="setting-title">主题</div>
+    <div class="setting-item skin skin-default" data-skin="skin-default">
+        <span>低调优雅</span>
+    </div>
+    <div class="setting-item skin skin-deepblue" data-skin="skin-deepblue">
+        <span>蓝色梦幻</span>
+    </div>
+    <div class="setting-item skin skin-pink" data-skin="skin-pink">
+        <span>姹紫嫣红</span>
+    </div>
+    <div class="setting-item skin skin-green" data-skin="skin-green">
+        <span>一碧千里</span>
+    </div>
+</div>
