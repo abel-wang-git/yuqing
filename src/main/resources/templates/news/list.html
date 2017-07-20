@@ -49,24 +49,23 @@
                 <thead>
                 <tr>
                     <th>序号</th>
-                    <th>id</th>
-                    <th>内容</th>
+                    <!--<th>内容</th>-->
                     <th>标题</th>
                     <th>ｕｒｌ</th>
                     <th>编辑日期</th>
+                    <th>tag</th>
                 </tr>
                 </thead>
                 <tbody>
 
                 <tr th:each="page,iterStat : ${pageImpl}">
-
                     <td th:text="${iterStat.index+1}"></td>
-                    <td th:text="${page.id}"></td>
-                    <td th:text="${page.content}"></td>
+                    <!--<td th:text="${page.content}"></td>-->
                     <td th:text="${page.title}"></td>
                     <td th:text="${page.url}"></td>
                     <td th:text="${page.olddate}"></td>
-                    <div th:include="/fragment/list :: ud"></div>
+                    <td th:text="${page.source}"></td>
+                    <!--<div th:include="/fragment/list :: ud"></div>-->
                 </tr>
                 </tbody>
             </table>

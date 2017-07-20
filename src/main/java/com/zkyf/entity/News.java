@@ -28,6 +28,8 @@ public class News  implements Serializable {
     @Column(length = 2000)
     private String url;
 
+    private String source;
+
     public String getId() {
         return id;
     }
@@ -90,5 +92,13 @@ public class News  implements Serializable {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
     }
 }
